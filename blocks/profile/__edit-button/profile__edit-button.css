@@ -1,0 +1,12 @@
+.profile__edit-button {
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  background-image: url(../../../images/icon/vector-pen.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 10px;
+  max-height: 39px;
+  align-self: flex-end;
+  border: 1px solid #fff;
+}
