@@ -5,3 +5,21 @@
   column-gap: 18px;
   max-width: 336px;
 }
+
+@media screen and (max-width: 720px) {
+  .profile__info {
+    grid-template-columns: 36vw 24px;
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .profile__info {
+    grid-template-columns: 189px min-content;
+    width: 282px;
+    justify-content: center;
+    column-gap: 10px;
+    padding-top: 29px;
+    padding-bottom: 33px;
+  }
+}
