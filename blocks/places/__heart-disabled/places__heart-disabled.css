@@ -1,0 +1,12 @@
+.places__heart-disabled {
+  background-image: url(../../../images/icon/Heart-disabled.svg);
+  background-size: 22px 19px;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  border: none;
+  background-color: #fff;
+}
