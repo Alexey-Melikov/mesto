@@ -1,0 +1,21 @@
+.popup__close-button {
+  background-image: url(../../../images/icon/vector-cross-close.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  position: absolute;
+  right: -38px;
+  top: -38px;
+  border: none;
+}
+
+@media screen and (max-width: 588px) {
+  .popup__close-button {
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: -36px;
+  }
+}

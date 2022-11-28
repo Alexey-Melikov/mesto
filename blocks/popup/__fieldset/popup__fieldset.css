@@ -1,0 +1,15 @@
+.popup__fieldset {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  padding: 0 0 0 34px;
+  outline: none;
+}
+
+@media screen and (max-width: 588px) {
+  .popup__fieldset {
+    padding-left: 22px;
+  }
+}

@@ -29,10 +29,10 @@
             />
             <div class="profile__info">
               <p class="profile__name">Жак-Ив Кусто</p>
-              <button class="profile__edit-button"></button>
+              <button class="profile__edit-button button-hover"></button>
               <p class="profile__description">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button button-hover"></button>
           </section>
           <!--PROFILE-->
           <!--PLACES-->
@@ -45,7 +45,10 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Горы алтая</h1>
-                <button class="places__heart-disabled"></button>
+                <button
+                  type="submit"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
 
@@ -57,7 +60,7 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Камчатка</h1>
-                <button class="places__heart-disabled"></button>
+                <button class="places__heart-disabled button-hover"></button>
               </div>
             </div>
 
@@ -69,7 +72,7 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Кунгурская пещера</h1>
-                <button class="places__heart-disabled"></button>
+                <button class="places__heart-disabled button-hover"></button>
               </div>
             </div>
 
@@ -81,7 +84,7 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Озеро эльтон</h1>
-                <button class="places__heart-disabled"></button>
+                <button class="places__heart-disabled button-hover"></button>
               </div>
             </div>
 
@@ -93,7 +96,7 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Мраморный каньон Рускеала</h1>
-                <button class="places__heart-disabled"></button>
+                <button class="places__heart-disabled button-hover"></button>
               </div>
             </div>
 
@@ -105,7 +108,7 @@
               />
               <div class="places__group">
                 <h1 class="places__depiction">Долина гейзеров</h1>
-                <button class="places__heart-disabled"></button>
+                <button class="places__heart-disabled button-hover"></button>
               </div>
             </div>
           </article>
@@ -116,6 +119,33 @@
           <p class="footer__copyright">© 2022 Mesto Russia</p>
         </footer>
         <!--FOOTER-->
+        <!--POPUP-->
+        <section class="popup">
+          <div class="popup__container">
+            <button class="popup__close-button button-hover"></button>
+            <h2 class="popup__profile-setup">Редактировать профиль</h2>
+            <form class="popup__form">
+              <fieldset class="popup__fieldset">
+                <input
+                  class="popup__input-name"
+                  placeholder="Имя"
+                  type="text"
+                  name="nameInput"
+                />
+                <input
+                  class="popup__input-description"
+                  placeholder="О себе"
+                  type="text"
+                  name="descriptionImput"
+                />
+              </fieldset>
+              <button type="submit" class="popup__save-button button-hover">
+                Сохранить
+              </button>
+            </form>
+          </div>
+        </section>
+        <!--POPUP-->
       </div>
     </div>
     <script src="./pages/script.js"></script>
