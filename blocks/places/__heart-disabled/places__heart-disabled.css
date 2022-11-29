@@ -10,3 +10,7 @@
   border: none;
   background-color: #fff;
 }
+
+.places__heart-disabled:hover {
+  opacity: 0.5;
+}

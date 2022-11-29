@@ -6,7 +6,7 @@
   border: 2px solid #fff;
   border-radius: 2px;
   background-color: #f000;
-  background-image: url(../../../images/icon/vector-cross.png);
+  background-image: url(../../../images/icon/vector-cross.svg);
   background-repeat: no-repeat;
   background-size: 22px 22px;
   background-position: center;
@@ -22,5 +22,6 @@
 @media screen and (max-width: 588px) {
   .profile__add-button {
     width: 282px;
+    background-size: 16px 16px;
   }
 }

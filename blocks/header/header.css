@@ -1,7 +1,7 @@
 .header {
   padding-top: 45px;
-  border-bottom: 1px solid #545454;
-  height: 74px;
+  border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+  min-height: 74px;
   margin: 0 auto;
   max-width: 880px;
 }
@@ -16,6 +16,6 @@
   .header {
     padding-top: 28px;
     width: 100%;
-    height: 56px;
+    min-height: 56px;
   }
 }
