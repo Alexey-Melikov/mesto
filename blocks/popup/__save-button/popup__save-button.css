@@ -11,6 +11,7 @@
   line-height: 22px;
   text-align: center;
   margin-left: 34px;
+  margin-bottom: 37px;
 }
 
 @media screen and (max-width: 588px) {
@@ -21,6 +22,7 @@
     height: 46px;
     margin-top: 45px;
     margin-left: 22px;
+    margin-bottom: 25px;
   }
 }
 

@@ -29,14 +29,20 @@
             />
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button button-hover"></button>
+              <button
+                type="menu"
+                class="profile__edit-button button-hover"
+              ></button>
               <p class="profile__description">Исследователь океана</p>
             </div>
-            <button class="profile__add-button button-hover"></button>
+            <button
+              type="menu"
+              class="profile__add-button button-hover"
+            ></button>
           </section>
           <!--PROFILE-->
           <!--PLACES-->
-          <article class="places">
+          <section class="places">
             <div class="places__place">
               <img
                 class="places__image"
@@ -46,7 +52,7 @@
               <div class="places__group">
                 <h2 class="places__depiction">Горы алтая</h2>
                 <button
-                  type="submit"
+                  type="button"
                   class="places__heart-disabled button-hover"
                 ></button>
               </div>
@@ -60,7 +66,10 @@
               />
               <div class="places__group">
                 <h2 class="places__depiction">Камчатка</h2>
-                <button class="places__heart-disabled button-hover"></button>
+                <button
+                  type="button"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
 
@@ -72,7 +81,10 @@
               />
               <div class="places__group">
                 <h2 class="places__depiction">Кунгурская пещера</h2>
-                <button class="places__heart-disabled button-hover"></button>
+                <button
+                  type="button"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
 
@@ -84,7 +96,10 @@
               />
               <div class="places__group">
                 <h2 class="places__depiction">Озеро эльтон</h2>
-                <button class="places__heart-disabled button-hover"></button>
+                <button
+                  type="button"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
 
@@ -96,7 +111,10 @@
               />
               <div class="places__group">
                 <h2 class="places__depiction">Мраморный каньон Рускеала</h2>
-                <button class="places__heart-disabled button-hover"></button>
+                <button
+                  type="button"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
 
@@ -108,10 +126,13 @@
               />
               <div class="places__group">
                 <h2 class="places__depiction">Долина гейзеров</h2>
-                <button class="places__heart-disabled button-hover"></button>
+                <button
+                  type="button"
+                  class="places__heart-disabled button-hover"
+                ></button>
               </div>
             </div>
-          </article>
+          </section>
           <!--PLACES-->
         </main>
         <!--FOOTER-->
@@ -122,18 +143,21 @@
         <!--POPUP-->
         <section class="popup">
           <div class="popup__container">
-            <button class="popup__close-button button-hover"></button>
+            <button
+              type="button"
+              class="popup__close-button button-hover"
+            ></button>
             <h2 class="popup__profile-setup">Редактировать профиль</h2>
-            <form class="popup__form">
+            <form name="popup-form" class="popup__form">
               <fieldset class="popup__fieldset">
                 <input
-                  class="popup__input-name"
+                  class="popup__input popup__input-name"
                   placeholder="Имя"
                   type="text"
                   name="nameInput"
                 />
                 <input
-                  class="popup__input-description"
+                  class="popup__input popup__input-description"
                   placeholder="О себе"
                   type="text"
                   name="descriptionImput"
@@ -148,6 +172,6 @@
         <!--POPUP-->
       </div>
     </div>
-    <script src="./pages/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -2,13 +2,14 @@
   width: 24px;
   height: 24px;
   background-color: #000;
-  background-image: url(../../../images/icon/vector-pen.png);
+  background-image: url(../../../images/icon/vectop-pen.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 10px 10px;
   max-height: 39px;
   align-self: flex-end;
   border: 1px solid #fff;
+  margin-bottom: 9px;
 }
 
 @media screen and (max-width: 588px) {
@@ -16,5 +17,6 @@
     width: 18px;
     height: 18px;
     background-size: 7.5px 7.5px;
+    margin-bottom: 7px;
   }
 }

@@ -3,8 +3,6 @@
   border-radius: 10px;
   position: fixed;
   width: 430px;
-  height: 330px;
-  top: 195px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -13,7 +11,5 @@
 @media screen and (max-width: 588px) {
   .popup__container {
     width: 282px;
-    height: 322px;
-    top: 123px;
   }
 }
