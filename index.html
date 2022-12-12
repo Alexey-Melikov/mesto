@@ -42,97 +42,7 @@
           </section>
           <!--PROFILE-->
           <!--PLACES-->
-          <section class="places">
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/Altai-mountains.jpg"
-                alt="Изображение Горы алтая"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Горы алтая</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/Kamchatka-Russia.jpg"
-                alt="Изображение Камчатка"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Камчатка</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/Kungur-cave.jpg"
-                alt="Изображение Кунгурская пещера"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Кунгурская пещера</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/lake-elton.jpg"
-                alt="Изображение озеро эльтон"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Озеро эльтон</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/Marble-Canyon-Ruskeala.jpg"
-                alt="Изображение Мраморный каньон Рускеала"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Мраморный каньон Рускеала</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-
-            <div class="places__place">
-              <img
-                class="places__image"
-                src="./images/Valley-of-Geysers.jpg"
-                alt="Изображение Долина гейзеров"
-              />
-              <div class="places__group">
-                <h2 class="places__depiction">Долина гейзеров</h2>
-                <button
-                  type="button"
-                  class="places__heart-disabled button-hover"
-                ></button>
-              </div>
-            </div>
-          </section>
+          <ul class="places"></ul>
           <!--PLACES-->
         </main>
         <!--FOOTER-->
@@ -140,15 +50,21 @@
           <p class="footer__copyright">© 2022 Mesto Russia</p>
         </footer>
         <!--FOOTER-->
-        <!--POPUP-->
-        <section class="popup">
+
+        <!--POPUP PROFILE SETTING-->
+        <section class="popup" id="popup__profile-setting">
           <div class="popup__container">
             <button
+              id="profile-setting_close-button"
               type="button"
               class="popup__close-button button-hover"
             ></button>
             <h2 class="popup__profile-setup">Редактировать профиль</h2>
-            <form name="popup-form" class="popup__form">
+            <form
+              name="popup-form"
+              id="profile-setting__form"
+              class="popup__form"
+            >
               <fieldset class="popup__fieldset">
                 <input
                   class="popup__input popup__input_name"
@@ -169,7 +85,73 @@
             </form>
           </div>
         </section>
-        <!--POPUP-->
+        <!--POPUP PROFILE SETTING-->
+
+        <!--POPUP CARDS SETTING-->
+        <section class="popup" id="popup__cards-setting">
+          <div class="popup__container">
+            <button
+              id="cards-setting_close-button"
+              type="button"
+              class="popup__close-button button-hover"
+            ></button>
+            <h2 class="popup__profile-setup">Новое место</h2>
+            <form
+              name="popup-form"
+              class="popup__form"
+              id="cards-setting__form"
+            >
+              <fieldset class="popup__fieldset">
+                <input
+                  class="popup__input popup__input_title"
+                  placeholder="название"
+                  type="text"
+                  name="nameInput"
+                />
+                <input
+                  class="popup__input popup__input_url"
+                  placeholder="Ссылка на картинку"
+                  type="text"
+                  name="descriptionImput"
+                />
+              </fieldset>
+              <button type="submit" class="popup__save-button button-hover">
+                Создать
+              </button>
+            </form>
+          </div>
+        </section>
+        <!--POPUP CARDS SETTING-->
+
+        <!--POPUP IMAGE -->
+        <section class="popup-image" id="popup-image">
+          <figure class="popup-image__figure">
+            <button
+              id="popup-image__close-button"
+              type="button"
+              class="popup__close-button button-hover"
+            ></button>
+            <img class="popup-image__image" src="#" alt="" />
+            <figcaption class="popup-image__caption"></figcaption>
+          </figure>
+        </section>
+        <!--POPUP IMAGE-->
+
+        <!--template-->
+        <template id="template-place">
+          <li class="places__place">
+            <button
+              class="places__delete-icon button-hover"
+              type="button"
+            ></button>
+            <img class="places__image" src="#" />
+            <div class="places__group">
+              <h2 class="places__depiction"></h2>
+              <button type="button" class="places__heart"></button>
+            </div>
+          </li>
+        </template>
+        <!--template-->
       </div>
     </div>
     <script src="./scripts/index.js"></script>

@@ -1,4 +1,4 @@
-.places__heart-disabled {
+.places__heart {
   background-image: url(../../../images/icon/Heart-disabled.svg);
   background-size: 22px 19px;
   background-repeat: no-repeat;
@@ -11,6 +11,6 @@
   background-color: #fff;
 }
 
-.places__heart-disabled:hover {
+.places__heart:hover {
   opacity: 0.5;
 }

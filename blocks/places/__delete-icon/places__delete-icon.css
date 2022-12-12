@@ -1,0 +1,11 @@
+.places__delete-icon {
+    background-image: url(../../../images/icon/Vector-trash.svg);
+    background-size: cover;
+    Width: 18px;
+    height: 19px;
+    border: none;
+    background-color: transparent;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+}
