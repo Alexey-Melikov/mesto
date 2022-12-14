@@ -103,12 +103,14 @@
             >
               <fieldset class="popup__fieldset">
                 <input
+                required oninvalid="this.setCustomValidity('Введите название места')" oninput="setCustomValidity('')"
                   class="popup__input popup__input_title"
                   placeholder="название"
                   type="text"
                   name="nameInput"
                 />
                 <input
+                required oninvalid="this.setCustomValidity('Введите ссылку на изображение')" oninput="setCustomValidity('')"
                   class="popup__input popup__input_url"
                   placeholder="Ссылка на картинку"
                   type="text"
