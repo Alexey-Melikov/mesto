@@ -30,6 +30,8 @@ const initialCards = [
     alternative: "Изображение Долина гейзеров",
   },
 ];
+
+
 /* ПОПАП РЕДАКТИРОВАНИЕ ПРОФИЛЯ */
 const profileButton = document.querySelector(".profile__edit-button"); // кнопка редактирование профился
 const popupProfile = document.querySelector("#popup__profile-setting"); // секция попап
@@ -68,12 +70,12 @@ const captionPopupImage = popupImage.querySelector(".popup-image__caption"); // 
 
 //ФУНКЦИИ
 
-const openPopup = (item) => {
-  item.classList.add("popup_opened"); // открыть попап
+const openPopup = (popup) => {
+  popup.classList.add("popup_opened"); // открыть попап
 };
 
-const popupClose = (item) => {
-  item.classList.remove("popup_opened"); // Закрыть попап
+const popupClose = (popup) => {
+  popup.classList.remove("popup_opened"); // Закрыть попап
 };
 
 function handleProfileFormSubmit(evt) {
@@ -84,28 +86,28 @@ function handleProfileFormSubmit(evt) {
 }
 
 const createPlace = (cardObgect) => {
-  const cards = template.content
+  const card = template.content
     .querySelector(".places__place")
     .cloneNode(true);
-  cards.querySelector(".places__image").src = cardObgect.link;
-  cards.querySelector(".places__depiction").textContent = cardObgect.name;
-  cards.querySelector(".places__image").alt = cardObgect.alternative;
-  cards //Ставим лайк
+  card.querySelector(".places__image").src = cardObgect.link;
+  card.querySelector(".places__depiction").textContent = cardObgect.name;
+  card.querySelector(".places__image").alt = cardObgect.alternative;
+  card //Ставим лайк
     .querySelector(".places__heart")
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("places__heart_active");
     });
-  cards //Удаляем карточку
+  card //Удаляем карточку
     .querySelector(".places__delete-icon")
     .addEventListener("click", function (event) {
       event.target.closest(".places__place").remove();
     });
-  cards // Просмотр картинки
+  card // Просмотр картинки
     .querySelector(".places__image")
     .addEventListener("click", () => {
       seePicture(cardObgect);
     });
-  return cards;
+  return card;
 };
 
 const renderCard = (cardObgect) => {
@@ -164,4 +166,3 @@ formElCards.addEventListener("submit", addCard);
 popupImageCloseButton.addEventListener("click", function () {
   popupClose(popupImage);
 });
-

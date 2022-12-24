@@ -66,20 +66,39 @@
               class="popup__form"
             >
               <fieldset class="popup__fieldset">
-                <input
-                  class="popup__input popup__input_name"
-                  placeholder="Имя"
-                  type="text"
-                  name="nameInput"
-                />
-                <input
-                  class="popup__input popup__input_description"
-                  placeholder="О себе"
-                  type="text"
-                  name="descriptionImput"
-                />
+                <label class="popup__label">
+                  <input
+                    required
+                    minlength="2"
+                    maxlength="40"
+                    class="popup__input popup__input_name"
+                    placeholder="Имя"
+                    type="text"
+                    name="username"
+                    id="username"
+                  />
+                  <span class="username-error popup__input-error"></span>
+                </label>
+                <label class="popup__label">
+                  <input
+                    required
+                    minlength="2"
+                    maxlength="200"
+                    class="popup__input popup__input_description"
+                    placeholder="О себе"
+                    type="text"
+                    name="descriptionImput"
+                    id="descriptionImput"
+                  />
+                  <span
+                    class="descriptionImput-error popup__input-error"
+                  ></span>
+                </label>
               </fieldset>
-              <button type="submit" class="popup__save-button button-hover">
+              <button
+                type="submit"
+                class="popup__save-button popup__button button-hover"
+              >
                 Сохранить
               </button>
             </form>
@@ -102,22 +121,35 @@
               id="cards-setting__form"
             >
               <fieldset class="popup__fieldset">
-                <input
-                required oninvalid="this.setCustomValidity('Введите название места')" oninput="setCustomValidity('')"
-                  class="popup__input popup__input_title"
-                  placeholder="название"
-                  type="text"
-                  name="nameInput"
-                />
-                <input
-                required oninvalid="this.setCustomValidity('Введите ссылку на изображение')" oninput="setCustomValidity('')"
-                  class="popup__input popup__input_url"
-                  placeholder="Ссылка на картинку"
-                  type="text"
-                  name="descriptionImput"
-                />
+                <label class="popup__label">
+                  <input
+                    required
+                    class="popup__input popup__input_title"
+                    placeholder="название"
+                    type="text"
+                    name="nameInput"
+                    id="nameInput"
+                  />
+                  <span class="nameInput-error popup__input-error"></span>
+                </label>
+                <label class="popup__label">
+                  <input
+                    required
+                    class="popup__input popup__input_url"
+                    placeholder="Ссылка на картинку"
+                    type="url"
+                    name="descriptionImput"
+                    id="descriptionImput"
+                  />
+                  <span
+                    class="descriptionImput-error popup__input-error"
+                  ></span>
+                </label>
               </fieldset>
-              <button type="submit" class="popup__save-button button-hover">
+              <button
+                type="submit"
+                class="popup__save-button popup__button button-hover"
+              >
                 Создать
               </button>
             </form>
@@ -156,6 +188,7 @@
         <!--template-->
       </div>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

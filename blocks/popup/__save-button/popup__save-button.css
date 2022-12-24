@@ -4,7 +4,7 @@
   height: 50px;
   border-radius: 2px;
   color: #fff;
-  margin-top: 48px;
+  margin-top: 20px;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -20,9 +20,9 @@
     font-size: 14px;
     line-height: 17px;
     height: 46px;
-    margin-top: 45px;
+    margin-top: 20px;
     margin-left: 22px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 
