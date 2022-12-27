@@ -30,12 +30,14 @@
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <button
+                aria-label="Кнопка открытия профиля"
                 type="button"
                 class="profile__edit-button button-hover"
               ></button>
               <p class="profile__description">Исследователь океана</p>
             </div>
             <button
+              aria-label="Кнопка открытия добавления фото с описанием"
               type="button"
               class="profile__add-button button-hover"
             ></button>
@@ -55,6 +57,7 @@
         <section class="popup" id="popup__profile-setting">
           <div class="popup__container">
             <button
+              aria-label="Кнопка закрытия профиля"
               id="profile-setting_close-button"
               type="button"
               class="popup__close-button button-hover"
@@ -111,6 +114,7 @@
         <section class="popup" id="popup__cards-setting">
           <div class="popup__container">
             <button
+              aria-label="Кнопка закрытия"
               id="cards-setting_close-button"
               type="button"
               class="popup__close-button button-hover"
@@ -125,6 +129,8 @@
               <fieldset class="popup__fieldset">
                 <label class="popup__label">
                   <input
+                    minlength="2"
+                    maxlength="30"
                     required
                     class="popup__input popup__input_title"
                     placeholder="название"
@@ -143,9 +149,7 @@
                     name="urlImput"
                     id="urlImput"
                   />
-                  <span
-                    class="urlImput-error popup__input-error"
-                  ></span>
+                  <span class="urlImput-error popup__input-error"></span>
                 </label>
               </fieldset>
               <button
@@ -163,6 +167,7 @@
         <section class="popup popup-image" id="popup-image">
           <figure class="popup-image__figure">
             <button
+              aria-label="Кнопка закрытия окна"
               id="popup-image__close-button"
               type="button"
               class="popup-image__close-button popup__close-button button-hover"
@@ -177,20 +182,26 @@
         <template id="template-place">
           <li class="places__place">
             <button
+              aria-label="Кнопка удалить карточку"
               class="places__delete-icon button-hover"
               type="button"
             ></button>
             <img class="places__image" src="#" />
             <div class="places__group">
               <h2 class="places__depiction"></h2>
-              <button type="button" class="places__heart"></button>
+              <button
+                aria-label="Кнопка поставить лайк"
+                type="button"
+                class="places__heart"
+              ></button>
             </div>
           </li>
         </template>
         <!--template-->
       </div>
     </div>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script defer src="./scripts/validate.js"></script>
+    <script defer src="./scripts/constants.js"></script>
+    <script defer src="./scripts/index.js"></script>
   </body>
 </html>

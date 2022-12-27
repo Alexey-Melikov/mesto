@@ -1,47 +1,4 @@
-const initialCards = [
-  {
-    name: "Горы алтая",
-    link: "./images/Altai-mountains.jpg",
-    alternative: "Изображение Горы алтая",
-  },
-  {
-    name: "Камчатка",
-    link: "./images/Kamchatka-Russia.jpg",
-    alternative: "Изображение Камчатка",
-  },
-  {
-    name: "Кунгурская пещера",
-    link: "./images/Kungur-cave.jpg",
-    alternative: "Изображение Кунгурская пещера",
-  },
-  {
-    name: "Озеро эльтон",
-    link: "./images/lake-elton.jpg",
-    alternative: "Изображение Озеро эльтон",
-  },
-  {
-    name: "Мраморный каньон Рускеала",
-    link: "./images/Marble-Canyon-Ruskeala.jpg",
-    alternative: "Изображение Мраморный каньон Рускеала",
-  },
-  {
-    name: "Долина гейзеров",
-    link: "./images/Valley-of-Geysers.jpg",
-    alternative: "Изображение Долина гейзеров",
-  },
-];
-
-const validationConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-
-const popupAll = Array.from(document.querySelectorAll(".popup")); //Все попапы
-
+const allPopups = Array.from(document.querySelectorAll(".popup")); //Все попапы
 /* ПОПАП РЕДАКТИРОВАНИЕ ПРОФИЛЯ */
 const profileButton = document.querySelector(".profile__edit-button"); // кнопка редактирование профился
 const popupProfile = document.querySelector("#popup__profile-setting"); // секция попап
@@ -88,7 +45,7 @@ const openPopup = (popup) => {
   document.addEventListener("keydown", keyClosePopup);
 };
 
-const popupClose = (popup) => {
+const closePopup = (popup) => {
   popup.classList.remove("popup_opened"); // Закрыть попап
   document.removeEventListener("keydown", keyClosePopup);
 };
@@ -97,14 +54,15 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   description.textContent = descriptionInput.value;
-  popupClose(popupProfile);
+  closePopup(popupProfile);
 }
 
 const createPlace = (cardObgect) => {
   const card = template.content.querySelector(".places__place").cloneNode(true);
-  card.querySelector(".places__image").src = cardObgect.link;
+  const cardImage = card.querySelector(".places__image");
+  cardImage.src = cardObgect.link;
   card.querySelector(".places__depiction").textContent = cardObgect.name;
-  card.querySelector(".places__image").alt = cardObgect.alternative;
+  cardImage.alt = cardObgect.alternative;
   card //Ставим лайк
     .querySelector(".places__heart")
     .addEventListener("click", function (evt) {
@@ -112,8 +70,8 @@ const createPlace = (cardObgect) => {
     });
   card //Удаляем карточку
     .querySelector(".places__delete-icon")
-    .addEventListener("click", function (event) {
-      event.target.closest(".places__place").remove();
+    .addEventListener("click", () => {
+      card.remove();
     });
   card // Просмотр картинки
     .querySelector(".places__image")
@@ -136,24 +94,23 @@ const addCard = (event) => {
   renderCard({
     name: titleInput.value,
     link: urlInput.value,
-    alternative: "Изображение " + titleInput.value,
+    alternative: `Изображение ${titleInput.value}`,
   });
-  popupClose(popupCards);
-  titleInput.value = titleInput.ariaPlaceholder;
-  urlInput.value = urlInput.ariaPlaceholder;
+  closePopup(popupCards);
+  formElCards.reset();
 };
 
 const seePicture = (cardObgect) => {
   captionPopupImage.textContent = cardObgect.name;
   imgPopupImage.src = cardObgect.link;
-  imgPopupImage.alt = "Изображение " + captionPopupImage.textContent;
+  imgPopupImage.alt = `Изображение ${captionPopupImage.textContent}`;
   openPopup(popupImage);
 };
 
 function keyClosePopup(evt) {
   if (evt.key === "Escape") {
     const popupOpen = document.querySelector(".popup_opened"); // функци закрытия попапа по ESC
-    popupClose(popupOpen);
+    closePopup(popupOpen);
   }
 }
 
@@ -168,7 +125,7 @@ profileButton.addEventListener("click", function () {
 
 closeButtonPopupProfile.addEventListener("click", function () {
   // Закрытие попапа по нажатию на кнопку Попапа-профиля
-  popupClose(popupProfile);
+  closePopup(popupProfile);
 });
 
 formElProfile.addEventListener("submit", handleProfileFormSubmit); //Значение инпутов = значение профиля
@@ -176,26 +133,26 @@ formElProfile.addEventListener("submit", handleProfileFormSubmit); //Значе�
 cardsAddButton.addEventListener("click", function () {
   //открытие попапа по нажатию на кнопку добавление карточки
   openPopup(popupCards);
-  enableSubmitButton(popupCardsSaveButton, validationConfig);
+  disableSubmitButton(popupCardsSaveButton, validationConfig);
 });
 
 closeButtonCards.addEventListener("click", function () {
-  //Закрытие попапа по нажатию на кнопку попапа-добавление карточки
-  popupClose(popupCards);
+  //Закрытие попапа по нажатию на кнопку закрытия попапа-добавление карточки
+  closePopup(popupCards);
 });
 
 formElCards.addEventListener("submit", addCard); // добавление карточки на страницу
 
 popupImageCloseButton.addEventListener("click", function () {
   //Закрытие попапа-картинки по нажатию на кнопку
-  popupClose(popupImage);
+  closePopup(popupImage);
 });
 
-popupAll.forEach((formElement) => {
-  formElement.addEventListener("mousedown", function (event) {
-    // Все попапы закрываються при нажатии оверлей
+allPopups.forEach((popupElement) => {
+  popupElement.addEventListener("mousedown", function (event) {
+    // Открытый попап закрываеться при нажатии на оверлей
     if (event.target === event.currentTarget) {
-      popupClose(formElement);
+      closePopup(popupElement);
     }
   });
 });

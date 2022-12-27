@@ -28,22 +28,22 @@ function hasInvalidInput(inputList) {
 }
 
 function disableSubmitButton(buttonElement, config) {
-  buttonElement.classList.remove(config.inactiveButtonClass); // Тип кнопки(сохрания попапа) выключенна
+  buttonElement.classList.add(config.inactiveButtonClass); // Тип кнопки(сохрания попапа) выключенна
+  buttonElement.disabled = true;
 }
 
 function enableSubmitButton(buttonElement, config) {
   //Тип кнопки(сохрания попапа) включенна
-  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.classList.remove(config.inactiveButtonClass);
+  buttonElement.disabled = false;
 }
 
 function toggleButtonState(inputList, buttonElement, config) {
   // Проверка на вадидность => изминения типа кнопки
   if (hasInvalidInput(inputList)) {
-    enableSubmitButton(buttonElement, config);
-    buttonElement.disabled = true;
-  } else {
     disableSubmitButton(buttonElement, config);
-    buttonElement.disabled = false;
+  } else {
+    enableSubmitButton(buttonElement, config);
   }
 }
 
