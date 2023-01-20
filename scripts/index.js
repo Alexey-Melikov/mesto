@@ -13,7 +13,7 @@ const description = document.querySelector(".profile__description"); // опис
 /* РЕДАКТИРОВАНИЕ ПРОФИЛЯ */
 
 /* СЕКЦИЯ ТЕМПЛЕЙТ (КАРТОЧКИ) */
-const places = document.querySelector(".places"); // блок для карточки
+const places = document.querySelector(".places"); // блок в html для карточки
 const template = document.querySelector("#template-place"); // секция с карточками
 /* СЕКЦИЯ ТЕМПЛЕЙТ (КАРТОЧКИ) */
 
