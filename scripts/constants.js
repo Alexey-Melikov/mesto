@@ -39,3 +39,22 @@ const validationConfig = {
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
+
+const openPopup = (popup) => {
+  popup.classList.add("popup_opened"); // открыть попап
+  document.addEventListener("keydown", keyClosePopup);
+};
+
+const closePopup = (popup) => {
+  popup.classList.remove("popup_opened"); // Закрыть попап
+  document.removeEventListener("keydown", keyClosePopup);
+};
+
+function keyClosePopup(evt) {
+  if (evt.key === "Escape") {
+    const popupOpen = document.querySelector(".popup_opened"); // функция закрытия попапа по ESC
+    closePopup(popupOpen);
+  }
+}
+
+export { initialCards, validationConfig, openPopup, closePopup, keyClosePopup };
