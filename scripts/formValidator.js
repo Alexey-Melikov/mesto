@@ -2,6 +2,12 @@ class FormValidator {
   constructor(config, form) {
     this._config = config;
     this._form = form;
+    this._inputList = Array.from(
+      this._form.querySelectorAll(this._config.inputSelector) //Получаем инпуты
+    );
+    this._buttonElement = this._form.querySelector(
+      this._config.submitButtonSelector
+    );
   }
 
   _hideInputError(inputElement) {
@@ -28,7 +34,7 @@ class FormValidator {
     return this._inputList.some((inputElement) => !inputElement.validity.valid);
   }
 
-  disableSubmitButton() {
+  _disableSubmitButton() {
     this._buttonElement.classList.add(this._config.inactiveButtonClass); // Тип кнопки(сохрания попапа) выключенна
     this._buttonElement.disabled = true;
   }
@@ -40,23 +46,28 @@ class FormValidator {
 
   _toggleButtonState() {
     this._hasInvalidInput()
-      ? this.disableSubmitButton()
+      ? this._disableSubmitButton()
       : this._enableSubmitButton();
   }
 
-  enableValidation() {
-    this._inputList = Array.from(
-      this._form.querySelectorAll(this._config.inputSelector) //Получаем инпуты
-    );
-    this._buttonElement = this._form.querySelector(
-      this._config.submitButtonSelector
-    );
+  _setEventListeners() {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
         this._toggleButtonState();
       });
     });
+  }
+
+  resetValidation() {
+    this._toggleButtonState();
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+  }
+
+  enableValidation() {
+    this._setEventListeners();
   }
 }
 
