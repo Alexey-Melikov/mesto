@@ -94,9 +94,7 @@ const enableValidation = (config) => {
 //ОБРАБОТЧИКИ
 
 initialCards.forEach((object) => {
-  const card = new Card(object, "#template-place", handleCardClick);
-  const cardElement = card.generateCard();
-  places.prepend(cardElement);
+  places.prepend(createCard(object));
 });
 
 formElCards.addEventListener("submit", addCard);
@@ -122,7 +120,7 @@ formElProfile.addEventListener("submit", handleProfileFormSubmit); //Значе�
 cardsAddButton.addEventListener("click", function () {
   //открытие попапа по нажатию на кнопку добавление карточки
   openPopup(popupCards);
-  formValidators["popup-form"].resetValidation();
+  formValidators["cards-setting-form"].resetValidation();
 });
 
 profileButton.addEventListener("click", function () {
@@ -130,6 +128,7 @@ profileButton.addEventListener("click", function () {
   openPopup(popupProfile);
   nameInput.value = profileName.textContent;
   descriptionInput.value = description.textContent;
+  formValidators["profile-setup-form"].resetValidation();
 });
 
 formElCards.addEventListener("submit", addCard);

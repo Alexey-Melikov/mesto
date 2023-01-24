@@ -16,24 +16,16 @@ class Card {
     return cardElement;
   }
 
-  _toggleLike() {
-    this._element // Ставим лайк
-      .querySelector(".places__heart")
-      .addEventListener("click", function (evt) {
-        evt.target.classList.toggle("places__heart_active");
-      });
+  _toggleLike(evt) {
+    evt.target.classList.toggle("places__heart_active");
   }
 
-  _deleteCard() {
-    this._element // Удаляем карточку
-      .querySelector(".places__delete-icon")
-      .addEventListener("click", () => {
-        this._element.remove();
-      });
+  _deleteCard(element) {
+    element.remove();
   }
 
   _handleImageClick() {
-    this._element // Просмотр картинки
+    this._element
       .querySelector(".places__image")
       .addEventListener("click", () => {
         this._handleOpenPicture();
@@ -41,8 +33,16 @@ class Card {
   }
 
   _setEventListeners() {
-    this._toggleLike();
-    this._deleteCard();
+    this._element // Ставим лайк
+      .querySelector(".places__heart")
+      .addEventListener("click", this._toggleLike);
+
+    this._element // Удаляем карточку
+      .querySelector(".places__delete-icon")
+      .addEventListener("click", () => {
+        this._deleteCard(this._element);
+      });
+
     this._cardImage.addEventListener("click", () => {
       this._handleCardClick(this._name, this._link);
     });
