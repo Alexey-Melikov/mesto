@@ -24,14 +24,6 @@ class Card {
     element.remove();
   }
 
-  _handleImageClick() {
-    this._element
-      .querySelector(".places__image")
-      .addEventListener("click", () => {
-        this._handleOpenPicture();
-      });
-  }
-
   _setEventListeners() {
     this._element // Ставим лайк
       .querySelector(".places__heart")
@@ -61,3 +53,14 @@ class Card {
 }
 
 export { Card };
+
+
+/*
+  _handleImageClick() {
+    this._element
+      .querySelector(".places__image")
+      .addEventListener("click", () => {
+        this._handleOpenPicture();
+      });
+  }
+*/
