@@ -1,40 +1,32 @@
-import altaiMountains from "../images/Altai-mountains.jpg";
-import kamchatkaRussia from "../images/Kamchatka-Russia.jpg";
-import kungurCave from "../images/Kungur-cave.jpg";
-import lakeElton from "../images/lake-elton.jpg";
-import marbleCanyon from "../images/Marble-Canyon-Ruskeala.jpg";
-import valleyGeysers from "../images/Valley-of-Geysers.jpg";
-
-
 const initialCards = [
   {
     name: "Горы алтая",
-    link: altaiMountains,
+    link: "./images/Altai-mountains.jpg",
     alternative: "Изображение Горы алтая",
   },
   {
     name: "Камчатка",
-    link: kamchatkaRussia,
+    link: "./images/Kamchatka-Russia.jpg",
     alternative: "Изображение Камчатка",
   },
   {
     name: "Кунгурская пещера",
-    link: kungurCave,
+    link: "./images/Kungur-cave.jpg",
     alternative: "Изображение Кунгурская пещера",
   },
   {
     name: "Озеро эльтон",
-    link: lakeElton,
+    link: "./images/lake-elton.jpg",
     alternative: "Изображение Озеро эльтон",
   },
   {
     name: "Мраморный каньон Рускеала",
-    link: marbleCanyon,
+    link: "./images/Marble-Canyon-Ruskeala.jpg",
     alternative: "Изображение Мраморный каньон Рускеала",
   },
   {
     name: "Долина гейзеров",
-    link: valleyGeysers,
+    link: "./images/Valley-of-Geysers.jpg",
     alternative: "Изображение Долина гейзеров",
   },
 ];
