@@ -24,7 +24,7 @@ import {
 } from "../utils/constants.js";
 import "./index.css";
 
-// Формы валидации
+// Форма валидации
 const formValidators = {};
 
 // создаём карточку

@@ -30,21 +30,3 @@ class Popup {
   }
 }
 export { Popup };
-
-/*
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-*/
