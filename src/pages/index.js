@@ -22,6 +22,7 @@ import {
   popupImage,
   closeButtons,
 } from "../utils/constants.js";
+import "./index.css";
 
 // Формы валидации
 const formValidators = {};
