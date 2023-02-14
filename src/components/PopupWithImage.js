@@ -1,23 +1,20 @@
 import { Popup } from "./Popup.js";
 
 class PopupWithImage extends Popup {
-  constructor(popupSelector, image) {
+  constructor(popupSelector) {
     super(popupSelector);
-    this._image = image;
+    this._PopupImage = this._popup.querySelector(".popup-image__image"); //картинка попапа
+    this._captionPopupImage = this._popup.querySelector(
+      // Описание картинки
+      ".popup-image__caption"
+    );
   }
 
-  open() {
+  open(image) {
     super.open();
-    const imgPopupImage = this._popupSelector.querySelector(
-      ".popup-image__image"
-    ); //картинка попапа
-    const captionPopupImage = this._popupSelector.querySelector(
-      ".popup-image__caption"
-    ); // Описание картинки
-    captionPopupImage.textContent = this._image.name;
-    imgPopupImage.src = this._image.link;
-    imgPopupImage.alt = `Изображение ${this._image.name}`;
-    super.setEventListeners();
+    this._captionPopupImage.textContent = image.name;
+    this._PopupImage.src = image.link;
+    this._PopupImage.alt = `Изображение ${image.name}`;
   }
 }
 

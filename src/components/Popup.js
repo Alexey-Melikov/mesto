@@ -1,14 +1,14 @@
 class Popup {
   constructor(popupSelector) {
-    this._popupSelector = popupSelector;
+    this._popup = document.querySelector(popupSelector);
   }
   open() {
-    this._popupSelector.classList.add("popup_opened"); // открыть попап
+    this._popup.classList.add("popup_opened"); // открыть попап
     document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
-    this._popupSelector.classList.remove("popup_opened"); // Закрыть попап
+    this._popup.classList.remove("popup_opened"); // Закрыть попап
     document.removeEventListener("keydown", this._handleEscClose);
   }
 
@@ -19,11 +19,11 @@ class Popup {
   };
 
   setEventListeners() {
-    this._popupSelector.addEventListener("mousedown", (evt) => {
+    this._popup.addEventListener("mousedown", (evt) => {
       if (evt.target.classList.contains("popup_opened")) {
         this.close();
       }
-      if (evt.target.classList.contains("popup__close")) {
+      if (evt.target.classList.contains("popup__close-button")) {
         this.close();
       }
     });
