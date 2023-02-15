@@ -34,7 +34,6 @@ function createCard(object) {
 // открыть попап с картинкой
 
 function handleCardClick(name, link) {
-  popupWithImage.setEventListeners();
   popupWithImage.open({ name, link });
 }
 
@@ -48,8 +47,11 @@ const enableValidation = (config) => {
     validator.enableValidation();
   });
 };
+enableValidation(validationConfig);
+
 // Класс popupWithImage  =>
 const popupWithImage = new PopupWithImage(".popup-image");
+popupWithImage.setEventListeners();
 
 // Класс Section  =>
 const defaultCardList = new Section(
@@ -62,11 +64,13 @@ const defaultCardList = new Section(
   },
   places
 );
+defaultCardList.renderItems();
 
 // Класс попап карточки =>
 const popupCard = new PopupWithForm("#popup__cards-setting", (object) => {
   defaultCardList.addItem(createCard(object));
 });
+popupCard.setEventListeners();
 
 // Класс попап профиля, юзера =>
 const userInfo = new UserInfo(profileName, description);
@@ -77,6 +81,7 @@ const popupProfileSetting = new PopupWithForm(
     userInfo.setUserInfo(object);
   }
 );
+popupProfileSetting.setEventListeners();
 
 profileButton.addEventListener("click", function () {
   // открытие попапа по нажатию на кнопку профиля
@@ -90,10 +95,3 @@ cardsAddButton.addEventListener("click", function () {
   popupCard.open();
   formValidators["cards-setting-form"].resetValidation();
 });
-
-//ОБРАБОТЧИКИ
-
-enableValidation(validationConfig);
-popupProfileSetting.setEventListeners();
-defaultCardList.renderItems();
-popupCard.setEventListeners();
