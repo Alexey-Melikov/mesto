@@ -3,7 +3,4 @@ dist
 build
 .npmrc
 .idea
-node_modules
-dist
-build
-.npmrc
+
