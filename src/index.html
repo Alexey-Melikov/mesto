@@ -21,11 +21,14 @@
         <!--PROFILE-->
         <main class="content">
           <section class="profile">
-            <img
-              class="profile__image"
-              src="<%=require('./images/KUSTO.jpg')%>"
-              alt="фотография Жак-Ив Кусто"
-            />
+            <div class="profile__avatar-containrer">
+              <img
+                class="profile__image"
+                src="<%=require('./images/KUSTO.jpg')%>"
+                alt="фотография Жак-Ив Кусто"
+              />
+              <button class="profile__avatar-button"></button>
+            </div>
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <button
@@ -77,10 +80,10 @@
                     class="popup__input popup__input_name"
                     placeholder="Имя"
                     type="text"
-                    name="username"
-                    id="username"
+                    name="name"
+                    id="name"
                   />
-                  <span class="username-error popup__input-error"></span>
+                  <span class="name-error popup__input-error"></span>
                 </label>
                 <label class="popup__label">
                   <input
@@ -90,12 +93,10 @@
                     class="popup__input popup__input_description"
                     placeholder="О себе"
                     type="text"
-                    name="descriptionImput"
-                    id="descriptionImput"
+                    name="about"
+                    id="about"
                   />
-                  <span
-                    class="descriptionImput-error popup__input-error"
-                  ></span>
+                  <span class="about-error popup__input-error"></span>
                 </label>
               </fieldset>
               <button
@@ -153,7 +154,7 @@
               </fieldset>
               <button
                 type="submit"
-                class="popup__save-button popup__button popup__cards-button button-hover"
+                class="popup__save-button popup__button button-hover"
               >
                 Создать
               </button>
@@ -178,7 +179,7 @@
         <!--POPUP IMAGE-->
 
         <!--template-->
-        <template id="template-place">
+        <template id="template-place-owner">
           <li class="places__place">
             <button
               aria-label="Кнопка удалить карточку"
@@ -188,16 +189,111 @@
             <img class="places__image" src="#" />
             <div class="places__group">
               <h2 class="places__depiction"></h2>
-              <button
-                aria-label="Кнопка поставить лайк"
-                type="button"
-                class="places__heart"
-              ></button>
+              <div class="places__like-container">
+                <button
+                  aria-label="Кнопка поставить лайк"
+                  type="button"
+                  class="places__heart"
+                ></button>
+                <span class="places__like-calculator"></span>
+              </div>
             </div>
           </li>
         </template>
         <!--template-->
+
+        <!--template-->
+        <template id="template-place">
+          <li class="places__place">
+            <img class="places__image" src="#" />
+            <div class="places__group">
+              <h2 class="places__depiction"></h2>
+              <div class="places__like-container">
+                <button
+                  aria-label="Кнопка поставить лайк"
+                  type="button"
+                  class="places__heart"
+                ></button>
+                <span class="places__like-calculator"></span>
+              </div>
+            </div>
+          </li>
+        </template>
+        <!--template-->
+
+        <!--Delete card popup popup_opened-->
+        <section class="popup" id="delete-card">
+          <div class="popup__container">
+            <button
+              aria-label="Кнопка закрытия"
+              id="delete-card_close-button"
+              type="button"
+              class="popup__close-button button-hover"
+            ></button>
+            <form
+              name="delete-card-form"
+              class="popup__form"
+              id="delete-card__form"
+            >
+              <h2 class="popup__profile-setup">Вы уверены?</h2>
+              <button
+                aria-label="Согласие на удаление фотографии"
+                type="submit"
+                class="popup__save-button popup__delete-button popup__button button-hover"
+              >
+                Да
+              </button>
+            </form>
+          </div>
+        </section>
+        <!--Delete card popup-->
+
+        <!--Update avatar form-->
+        <section class="popup" id="update-avatar">
+          <div class="popup__container">
+            <button
+              aria-label="Кнопка закрытия"
+              id="update-avatar_close-button"
+              type="button"
+              class="popup__close-button button-hover"
+            ></button>
+            <form
+              name="update-avatar-form"
+              class="popup__form"
+              id="update-avatar__form"
+            >
+              <h2 class="popup__profile-setup">Обновить аватар?</h2>
+              <fieldset class="popup__fieldset">
+                <label class="popup__label">
+                  <input
+                    required
+                    class="popup__input popup__input_avatar"
+                    placeholder="Ссылка на аватар"
+                    type="url"
+                    name="avatarImput"
+                    id="avatarImput"
+                  />
+                  <span class="avatarImput-error popup__input-error"></span>
+                </label>
+              </fieldset>
+              <button
+                type="submit"
+                class="popup__save-button popup__button button-hover"
+              >
+                Сохранить
+              </button>
+            </form>
+          </div>
+        </section>
+        <!--Update avatar form-->
       </div>
     </div>
   </body>
 </html>
+
+<!--
+   
+
+
+
+-->
