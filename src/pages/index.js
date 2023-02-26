@@ -53,6 +53,7 @@ function handleCallbackDeleteCard(cardId, card) {
     .catch((err) => console.log(err))
     .finally(() => {
       popupConfirm.loadingProc(false);
+      popupConfirm.close();
     });
 }
 
@@ -72,6 +73,7 @@ function handleCallbackCard(card) {
     .catch((err) => console.log(err))
     .finally(() => {
       popupCard.loadingProc(false);
+      popupCard.close();
     });
 }
 // Колбэк лайка карточки
@@ -81,7 +83,8 @@ function handleCardLike(counter, card, cardId) {
     api.handleLikeCard(cardId).then((res) => {
       counter.textContent = `${res.likes.length}`;
       heartButton.classList.add("places__heart_active");
-    });
+    })
+    .catch((err) => console.log(err));
   } else {
     api
       .handleDisLikeCard(cardId)
@@ -94,9 +97,9 @@ function handleCardLike(counter, card, cardId) {
 }
 
 // создаём карточку
-function createCard(object, clientId) {
+function createCard(cardData, clientId) {
   const card = new Card(
-    object,
+    cardData,
     templateSelectors,
     handleCardClick,
     clientId,
@@ -107,16 +110,17 @@ function createCard(object, clientId) {
 }
 
 // Класс попап профиля, юзера =>
-function handleCallbackProfile(object) {
+function handleCallbackProfile(userInfo) {
   popupProfileSetting.loadingProc(true);
   api
-    .updateUserInformation(object)
+    .updateUserInformation(userInfo)
     .then((data) => {
       client.setUserInfo(data);
     })
     .catch((err) => console.log(err))
     .finally(() => {
       popupProfileSetting.loadingProc(false);
+      popupProfileSetting.close();
     });
 }
 
@@ -148,6 +152,7 @@ function handleCallbackAvatar(values) {
     .catch((err) => console.log(err))
     .finally(() => {
       popupAvatar.loadingProc(false);
+      popupAvatar.close();
     });
 }
 // класс попап аватар

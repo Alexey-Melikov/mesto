@@ -13,13 +13,21 @@ class UserInfo {
   }
 
   setUserInfo(data) {
-    this._name.textContent = data.name;
-    this._description.textContent = data.about;
-    this._avatarInput.src = data.avatar;
+    if (data.name) {
+      this._name.textContent = data.name;
+    }
+    if (data.about) {
+      this._description.textContent = data.about;
+    }
+    if (data.avatar) {
+      this._avatarInput.src = data.avatar;
+    }
   }
 
   setUserAvatar(data) {
-    this._avatarInput.src = data.avatar;
+    if (data.avatar) {
+      this._avatarInput.src = data.avatar;
+    }
   }
 }
 export { UserInfo };
