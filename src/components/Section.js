@@ -1,18 +1,17 @@
 class Section {
-  constructor({ items, renderer }, container) {
-    this._initialArray = items;
+  constructor(renderer, container) {
     this._container = container;
     this._renderer = renderer;
   }
 
-  renderItems() {
-    this._initialArray.forEach((element) => {
-      this._renderer(element);
+  renderItems(object) {
+    object.reverse().forEach((element) => {
+      this._renderer(element, this._container);
     });
   }
 
-  addItem(element) {
-    this._container.prepend(element);
+  renderItem(element) {
+    this._renderer(element, this._container);
   }
 }
 
