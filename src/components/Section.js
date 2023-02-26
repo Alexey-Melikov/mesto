@@ -4,8 +4,8 @@ class Section {
     this._renderer = renderer;
   }
 
-  renderItems(object) {
-    object.reverse().forEach((element) => {
+  renderItems(items) {
+    items.reverse().forEach((element) => {
       this._renderer(element, this._container);
     });
   }
