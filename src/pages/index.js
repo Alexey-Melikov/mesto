@@ -49,11 +49,11 @@ function handleCallbackDeleteCard(cardId, card) {
     .handleDeleteCard(cardId)
     .then(() => {
       card.remove();
+      popupConfirm.close();
     })
     .catch((err) => console.log(err))
     .finally(() => {
       popupConfirm.loadingProc(false);
-      popupConfirm.close();
     });
 }
 
@@ -68,23 +68,25 @@ function handleCallbackCard(card) {
   api
     .handleAddCard(card)
     .then((data) => {
+      popupCard.close();
       return section.renderItem(createCard(data, client.id));
     })
     .catch((err) => console.log(err))
     .finally(() => {
       popupCard.loadingProc(false);
-      popupCard.close();
     });
 }
 // Колбэк лайка карточки
 function handleCardLike(counter, card, cardId) {
   const heartButton = card.querySelector(".places__heart");
   if (!heartButton.classList.contains("places__heart_active")) {
-    api.handleLikeCard(cardId).then((res) => {
-      counter.textContent = `${res.likes.length}`;
-      heartButton.classList.add("places__heart_active");
-    })
-    .catch((err) => console.log(err));
+    api
+      .handleLikeCard(cardId)
+      .then((res) => {
+        counter.textContent = `${res.likes.length}`;
+        heartButton.classList.add("places__heart_active");
+      })
+      .catch((err) => console.log(err));
   } else {
     api
       .handleDisLikeCard(cardId)
@@ -116,11 +118,11 @@ function handleCallbackProfile(userInfo) {
     .updateUserInformation(userInfo)
     .then((data) => {
       client.setUserInfo(data);
+      popupProfileSetting.close();
     })
     .catch((err) => console.log(err))
     .finally(() => {
       popupProfileSetting.loadingProc(false);
-      popupProfileSetting.close();
     });
 }
 
@@ -148,11 +150,11 @@ function handleCallbackAvatar(values) {
     .userAvatarUpdate(values)
     .then((data) => {
       client.setUserAvatar(data);
+      popupAvatar.close();
     })
     .catch((err) => console.log(err))
     .finally(() => {
       popupAvatar.loadingProc(false);
-      popupAvatar.close();
     });
 }
 // класс попап аватар
